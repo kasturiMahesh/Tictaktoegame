@@ -1,0 +1,140 @@
+/* styles.css */
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Linear Gradient Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+#gameContainer {
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Maximum width for the game */
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+#board div {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* X and O Styling */
+#board div.x {
+    color: #FF5733; /* Red color for X */
+    font-size: 48px; /* Larger size for X */
+}
+
+#board div.o {
+    color: #3498db; /* Blue color for O */
+    font-size: 48px; /* Larger size for O */
+}
+
+#gameStatus {
+    font-size: 18px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Result Popup Styles */
+#resultPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-in transition */
+}
+
+#resultMessageContainer {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: #333;
+}
+
+#resultMessageContainer h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #board {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    
+    #board div {
+        font-size: 28px; /* Smaller font size for mobile */
+        height: 80px; /* Adjust height for mobile devices */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 18px;
+    }
+}
